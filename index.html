@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HerPass | 女性向け経理職特化転職エージェント</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="wrapper"> <!-- 追加: コンテンツを中央に配置するためのラッパー -->
+        <header>
+            <div class="header-container">
+                <p>HerPass | 女性向け経理職特化転職エージェント【株式会社アウローラ】</p>
+                <p>厚生労働大臣許可 13-ユ-307882</p>
+            </div>
+        </header>
+
+        <section class="progress-section">
+            <div class="progress-container">
+                <!-- 進捗バーのアイコン (現在のステップを示す) -->
+                <div class="progress-marker"></div>
+                
+                <!-- 各ステップの表示 -->
+                <div class="progress-step active">STEP1</div>
+                <div class="progress-step">STEP2</div>
+                <div class="progress-step">STEP3</div>
+                <div class="progress-step">STEP4</div>
+                <div class="progress-step">STEP5</div>
+                <div class="progress-step">STEP6</div>
+                <div class="progress-step">STEP7</div>
+                <div class="progress-step">STEP8</div>
+                <div class="progress-step">STEP9</div>
+            </div>
+        </section>
+
+        <section class="question-section">
+            <h2>質問にお答えください</h2>
+            <div class="options-container">
+                            <!-- 質問1 -->
+                <div class="question active" id="question1">
+                    <label>【1分で回答完了】転職意欲はどれくらいありますか？</label><br>
+                    <button class="option-button" onclick="selectOption(1, '近いうちに転職したい')">近いうちに転職したい</button>
+                    <button class="option-button" onclick="selectOption(1, '今は情報収集したい')">今は情報収集したい</button>
+                </div>
+
+
+                <!-- 質問2 -->
+                <div class="question" id="question2">
+                    <label>現在の年収を教えてください</label><br>
+                    <button class="option-button" onclick="selectOption(2, '300万円未満')">300万円未満</button>
+                    <button class="option-button" onclick="selectOption(2, '300~399万円')">300~399万円</button>
+                    <button class="option-button" onclick="selectOption(2, '400~499万円')">400~499万円</button>
+                    <button class="option-button" onclick="selectOption(2, '500~599万円')">500~599万円</button>
+                    <button class="option-button" onclick="selectOption(2, '600~699万円')">600~699万円</button>
+                    <button class="option-button" onclick="selectOption(2, '700~799万円')">700~799万円</button>
+                    <button class="option-button" onclick="selectOption(2, '800~999万円')">800~999万円</button>
+                    <button class="option-button" onclick="selectOption(2, '1000~1199万円')">1000~1199万円</button>
+                    <button class="option-button" onclick="selectOption(2, '1200万円以上')">1200万円以上</button>
+                </div>
+
+
+                <!-- 質問3 -->
+                <div class="question" id="question3">
+                    <label>これまでに経験のある職種を全て選択してください</label><br>
+                    <label>[複数選択可]</label><br>
+                    <button class="option-button" onclick="toggleSelection('経理・財務・会計士・税理士')">経理・財務・会計士・税理士</button>
+                    <button class="option-button" onclick="toggleSelection('その他管理部門職種')">その他管理部門職種</button>
+                    <button class="option-button" onclick="toggleSelection('その他')">その他</button>
+                </div>
+
+
+
+                <!-- 質問4 -->
+                <div class="question" id="question4">
+                    <label>経理・財務・会計士・税理士としての実務経験年数は？</label><br>
+                    <button class="option-button" onclick="selectOption(4, '未経験')">未経験</button>
+                    <button class="option-button" onclick="selectOption(4, '3年未満')">3年未満</button>
+                    <button class="option-button" onclick="selectOption(4, '3~5年')">3~5年</button>
+                    <button class="option-button" onclick="selectOption(4, '6~10年')">6~10年</button>
+                    <button class="option-button" onclick="selectOption(4, '11年以上')">11年以上</button>
+                </div>
+
+
+                <!-- 質問5 -->
+                <div class="question" id="question5">
+                    <label>転職希望時期はいつですか？</label><br>
+                    <button class="option-button" onclick="selectOption(5, 'すぐに')">すぐに</button>
+                    <button class="option-button" onclick="selectOption(5, '3ヶ月以内')">3ヶ月以内</button>
+                    <button class="option-button" onclick="selectOption(5, '6ヶ月以内')">6ヶ月以内</button>
+                    <button class="option-button" onclick="selectOption(5, '1年以内')">1年以内</button>
+                    <button class="option-button" onclick="selectOption(5, 'まだ決まっていない')">まだ決まっていない</button>
+                </div>
+
+
+               <!-- 質問6 -->
+                <div class="question" id="question6">
+                    <label>年齢を教えてください</label><br>
+                    <input type="number" class="input-field" placeholder="例）32" id="ageInput">
+                </div>
+
+
+                <!-- 質問7 -->
+                <div class="question" id="question7">
+                    <label>氏名(漢字)を入力してください</label><br>
+                    <input type="text" class="input-field" placeholder="例）山田 太郎" id="nameInput">
+                </div>
+
+
+                <!-- 質問8 -->
+                <div class="question" id="question8">
+                    <label>電話番号を教えてください</label><br>
+                    <input type="tel" class="input-field" placeholder="例）08012345678" id="phoneInput">
+                </div>
+
+
+                <!-- 質問9 -->
+                <div class="question" id="question9">
+                    <label>メールアドレスを入力してください</label><br>
+                    <input type="email" class="input-field" placeholder="例）123example@gmail.com" id="emailInput">
+                </div>
+
+        </div>
+
+        <!-- 9問目に送信ボタンを追加 -->
+        <div class="navigation-buttons">
+            <button class="navigation-button" onclick="prevQuestion()">＜ 戻る</button>
+            <!-- 次の質問へボタン -->
+            <button class="navigation-button" id="nextButton" onclick="nextQuestion()">次の質問へ ＞</button>
+            <!-- 送信ボタンは最終ステップでのみ表示 -->
+            <button class="navigation-button" id="submitButton" style="display: none;" onclick="submitForm()">送信</button>
+        </div>
+
+        <div class="footer-update">
+            <p>2024/10/01 最新求人更新</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <a href="https://lp.her-pass.jp/service-terms" class="footer-link">利用規約</a> / 
+            <a href="https://aurora.tokyo/profile/privacyhandle/" class="footer-link">プライバシーポリシー</a> / 
+            <a href="https://aurora.tokyo/" class="footer-link">会社概要</a>
+            <p>tonton All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
