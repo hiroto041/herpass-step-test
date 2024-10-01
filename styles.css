@@ -1,0 +1,263 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;  /* 横方向中央揃え */
+    align-items: center;      /* 縦方向中央揃え */
+    background-color: #f5f5f5; /* 背景色を追加 */
+}
+
+.wrapper {
+    width: 560px; /* ページ全体の幅を560pxに設定 */
+    background-color: white;
+    padding: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* コンテンツに影を追加 */
+    min-height: 100%; /* ページ全体の高さを確保 */
+}
+
+/* ヘッダーセクション */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d32f2f;
+    color: white;
+    padding: 10px;
+    height: 100px; /* 高さを固定 */
+    box-sizing: border-box; /* パディングやボーダーを含めて高さを計算 */
+}
+
+
+/* 余白が変わらないようにマージンとパディングを固定 */
+.header-container p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+
+
+/* プログレスセクション */
+.progress-section {
+    display: flex;
+    justify-content: center;
+    margin: 20px 20px;
+
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.progress-marker {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background-image: url(#); /* アイコン画像を指定 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: left 0.5s ease;
+}
+
+.progress-step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.progress-step.active {
+    background-color: #d32f2f;
+    color: white;
+}
+
+/* 質問セクション */
+.question-section {
+    text-align: center;
+    margin: 20px;
+}
+
+.question-section h2 {
+    color: #d32f2f;
+    margin-bottom: 20px;
+}
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 各質問の初期設定を非表示にし、アクティブな質問だけを表示 */
+.question, .navigation-buttons {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.question.active, .navigation-buttons.active {
+    display: block;
+    opacity: 1;
+}
+
+.option-button, .navigation-button {
+    background-color: white;
+    border: 2px solid #d32f2f;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 16px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+.option-button:hover, .navigation-button:hover{
+    background-color: #d32f2f;
+    color: white;
+}
+
+/* 選択されたボタンのスタイル */
+.option-button.selected {
+    background-color: #d32f2f;
+    color: white;
+}
+
+
+.input-field {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    border: 2px solid #d32f2f;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* ナビゲーションボタンを質問セクションの下に配置し、中央に揃える */
+.navigation-buttons {
+    display: flex;
+    justify-content: center; /* ボタンを中央に配置 */
+    gap: 20px; /* ボタン間のスペースを広げる */
+    margin-top: 20px; /* 質問セクションとの間に余白を設ける */
+    padding: 0; /* 不要なパディングを削除 */
+    box-sizing: border-box;
+    position: relative; /* position: relative に変更してフッターに固定しないようにする */
+}
+
+
+
+
+
+
+/* フッターセクション */
+footer {
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+}
+
+.footer-content {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: underline;
+    margin: 0 5px; /* 各リンクに少しスペースを設ける */
+    cursor: pointer;
+}
+
+.footer-link:hover {
+    color: #d32f2f; /* リンクにホバー時の効果を追加 */
+}
+
+.footer-update {
+    color: #95A092;
+    font-size: 14px;
+}
+
+
+
+/* 質問の切り替えアニメーション */
+.question {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.question.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ナビゲーションボタンの配置調整 */
+.navigation-buttons {
+    display: flex;
+    justify-content: center; /* ボタンを中央に配置 */
+    gap: 20px; /* ボタン間のスペースを広げる */
+    margin-top: 20px; /* 質問セクションとの間に余白を設ける */
+    padding-top: 10px;
+}
+
+/* ボタンのデザインと文字サイズの調整 */
+.navigation-button {
+    background-color: #f5f5f5;
+    border: 1px solid #d32f2f;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navigation-button:hover {
+    background-color: #d32f2f;
+    color: white;
+}
+
+
+
+/* 進捗バーのステップ数を9に拡張し、アニメーションを追加 */
+.progress-step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.progress-step.active {
+    background-color: #d32f2f;
+    color: white;
+}
+
+
